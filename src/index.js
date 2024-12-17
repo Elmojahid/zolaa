@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Updated import for React 18
+import ReactDOM from 'react-dom';  // Ancienne syntaxe pour React 17
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style/flexboxgrid.min.css";
@@ -7,15 +7,15 @@ import './style/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Use ReactDOM.createRoot() for React 18+
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
+// Utilisez ReactDOM.render() pour React 17
+ReactDOM.render(
+  <React.StrictMode>
     <App />
-  </>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Si vous souhaitez mesurer les performances de votre application, passez une fonction
+// pour enregistrer les résultats (par exemple : reportWebVitals(console.log))
+// ou envoyez-les à un endpoint d'analytique. En savoir plus : https://bit.ly/CRA-vitals
 reportWebVitals();
